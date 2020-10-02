@@ -1,0 +1,170 @@
+$*$END_SPAN$",
+      "placeholders": {
+         "END_SPAN": {
+            "content": "$1"
+         },
+         "START_SPAN": {
+            "content": "$2"
+         }
+      }
+   },
+   "8330636888136075045_ph": {
+      "message": "\u003C/span>\u003Cspan class=\"required-message\" ng-show=\"!top.sufficientFeedback\">"
+   },
+   "843316808366399491": {
+      "message": "不佳"
+   },
+   "845494741086179740": {
+      "message": "PC 使用有線網路，Chromecast 則使用 Wi-Fi 網路"
+   },
+   "8515148417333877999": {
+      "message": "良好"
+   },
+   "8530815930928232626": {
+      "message": "視訊品質"
+   },
+   "8636962961150071298": {
+      "message": "播放進度"
+   },
+   "8706273405040403641": {
+      "message": "感謝你提供意見。"
+   },
+   "9059560719840598868": {
+      "message": "送出意見"
+   },
+   "9120942669794506861": {
+      "message": "你有安裝任何特殊的 VPN、Proxy、防火牆或 NAS 軟體嗎？"
+   },
+   "9211708838274008657": {
+      "message": "無法送出意見，請稍後再試。"
+   },
+   "MEDIA_ROUTER_ADDITIONAL_COMMENTS": {
+      "message": "2145752429973207616"
+   },
+   "MEDIA_ROUTER_AUDIO_QUALITY": {
+      "message": "8083429352755760987"
+   },
+   "MEDIA_ROUTER_CANCEL_BUTTON": {
+      "message": "2159130950882492111"
+   },
+   "MEDIA_ROUTER_CONTENT_QUESTION": {
+      "message": "5465034684300203467"
+   },
+   "MEDIA_ROUTER_DID_NOT_TRY": {
+      "message": "6585975561839203683"
+   },
+   "MEDIA_ROUTER_FEEDBACK_EMAIL_FIELD": {
+      "message": "4094392217219068632"
+   },
+   "MEDIA_ROUTER_FEEDBACK_FORM_DESCRIPTION": {
+      "message": "5028289843569700466"
+   },
+   "MEDIA_ROUTER_FEEDBACK_HEADER": {
+      "message": "7156560800952850585"
+   },
+   "MEDIA_ROUTER_FEEDBACK_PROMPT": {
+      "message": "642051245326856511"
+   },
+   "MEDIA_ROUTER_FEEDBACK_REQUIRED": {
+      "message": "6086448804586867636"
+   },
+   "MEDIA_ROUTER_FEEDBACK_TYPE_QUESTION": {
+      "message": "5440055726839070415"
+   },
+   "MEDIA_ROUTER_MIRRORING_QUALITY_SUBHEADING": {
+      "message": "8330636888136075045"
+   },
+   "MEDIA_ROUTER_NETWORK_DIFFERENT_WIFI": {
+      "message": "7824803162979416790"
+   },
+   "MEDIA_ROUTER_NETWORK_QUESTION": {
+      "message": "1213957982723875920"
+   },
+   "MEDIA_ROUTER_NETWORK_SAME_WIFI": {
+      "message": "5385436389563925676"
+   },
+   "MEDIA_ROUTER_NETWORK_WIRED_PC": {
+      "message": "845494741086179740"
+   },
+   "MEDIA_ROUTER_NO": {
+      "message": "3542042671420335679"
+   },
+   "MEDIA_ROUTER_PRIVACY_DATA_USAGE": {
+      "message": "4097220110929447276"
+   },
+   "MEDIA_ROUTER_SEND_BUTTON": {
+      "message": "9059560719840598868"
+   },
+   "MEDIA_ROUTER_SEND_LOGS": {
+      "message": "715869212995214079"
+   },
+   "MEDIA_ROUTER_SETUP_VISIBILITY_QUESTION": {
+      "message": "3370655049908001660"
+   },
+   "MEDIA_ROUTER_SOFTWARE_QUESTION": {
+      "message": "9120942669794506861"
+   },
+   "MEDIA_ROUTER_UNKNOWN": {
+      "message": "6997602168024654529"
+   },
+   "MEDIA_ROUTER_VIDEO_QUALITY": {
+      "message": "8530815930928232626"
+   },
+   "MEDIA_ROUTER_VIDEO_SMOOTHNESS": {
+      "message": "1428448869078126731"
+   },
+   "MEDIA_ROUTER_YES": {
+      "message": "2807800733729323332"
+   },
+   "MSG_FAILED_TO_CAST": {
+      "message": "4528089202128275824"
+   },
+   "MSG_KNOCK_DENIED": {
+      "message": "4246483347873264186"
+   },
+   "MSG_KNOCK_TIMEOUT": {
+      "message": "5991427458288444010"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_MR_CONNECT_FAILED": {
+      "message": "1522140683318860351"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "5699813974548050528"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_GOOD": {
+      "message": "8515148417333877999"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_PERFECT": {
+      "message": "1636686747687494376"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_POOR": {
+      "message": "843316808366399491"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "4592127349908255218"
+   },
+   "MSG_MR_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "4148300086676792937"
+   },
+   "MSG_MR_FEEDBACK_FINE_LOGS_WARNING": {
+      "message": "6963873398546068901"
+   },
+   "MSG_MR_FEEDBACK_LOGS_HEADER": {
+      "message": "7876724262035435114"
+   },
+   "MSG_MR_FEEDBACK_NA": {
+      "message": "2194670894476780934"
+   },
+   "MSG_MR_FEEDBACK_OK": {
+      "message": "3567591856726172993"
+   },
+   "MSG_MR_FEEDBACK_RESENDING": {
+      "message": "4756056595565370923"
+   },
+   "MSG_MR_FEEDBACK_SENDING": {
+      "message": "3219866268410307919"
+   },
+   "MSG_MR_FEEDB

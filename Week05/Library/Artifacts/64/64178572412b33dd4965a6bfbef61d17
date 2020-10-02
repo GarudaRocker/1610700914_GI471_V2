@@ -1,0 +1,165 @@
+"7824803162979416790": {
+      "message": "PC und Chromecast befinden sich in verschiedenen WLAN-Netzwerken, z. B. 2,4 GHz und 5 GHz."
+   },
+   "7876724262035435114": {
+      "message": "Streaming- und Geräteprotokolle"
+   },
+   "8009014317872238527": {
+      "message": "Stummschaltung aufheben"
+   },
+   "8083429352755760987": {
+      "message": "Audioqualität"
+   },
+   "8205999658352447129": {
+      "message": "Ruckeln"
+   },
+   "8330636888136075045": {
+      "message": "Qualitätsdetails spiegeln$START_SPAN$*$END_SPAN$",
+      "placeholders": {
+         "END_SPAN": {
+            "content": "$1"
+         },
+         "START_SPAN": {
+            "content": "$2"
+         }
+      }
+   },
+   "8330636888136075045_ph": {
+      "message": "\u003C/span>\u003Cspan class=\"required-message\" ng-show=\"!top.sufficientFeedback\">"
+   },
+   "843316808366399491": {
+      "message": "Schlecht"
+   },
+   "845494741086179740": {
+      "message": "PC nutzt ein kabelgebundenes Netzwerk und Chromecast ein WLAN."
+   },
+   "8515148417333877999": {
+      "message": "Gut"
+   },
+   "8530815930928232626": {
+      "message": "Videoqualität"
+   },
+   "8636962961150071298": {
+      "message": "Suche"
+   },
+   "8706273405040403641": {
+      "message": "Vielen Dank für dein Feedback."
+   },
+   "9059560719840598868": {
+      "message": "Feedback geben"
+   },
+   "9120942669794506861": {
+      "message": "Hast du einen speziellen VPN oder Proxy oder eine spezielle Firewall- oder NAS-Software installiert?"
+   },
+   "9211708838274008657": {
+      "message": "Feedback kann nicht gesendet werden. Bitte versuche es später noch einmal."
+   },
+   "MEDIA_ROUTER_ADDITIONAL_COMMENTS": {
+      "message": "2145752429973207616"
+   },
+   "MEDIA_ROUTER_AUDIO_QUALITY": {
+      "message": "8083429352755760987"
+   },
+   "MEDIA_ROUTER_CANCEL_BUTTON": {
+      "message": "2159130950882492111"
+   },
+   "MEDIA_ROUTER_CONTENT_QUESTION": {
+      "message": "5465034684300203467"
+   },
+   "MEDIA_ROUTER_DID_NOT_TRY": {
+      "message": "6585975561839203683"
+   },
+   "MEDIA_ROUTER_FEEDBACK_EMAIL_FIELD": {
+      "message": "4094392217219068632"
+   },
+   "MEDIA_ROUTER_FEEDBACK_FORM_DESCRIPTION": {
+      "message": "5028289843569700466"
+   },
+   "MEDIA_ROUTER_FEEDBACK_HEADER": {
+      "message": "7156560800952850585"
+   },
+   "MEDIA_ROUTER_FEEDBACK_PROMPT": {
+      "message": "642051245326856511"
+   },
+   "MEDIA_ROUTER_FEEDBACK_REQUIRED": {
+      "message": "6086448804586867636"
+   },
+   "MEDIA_ROUTER_FEEDBACK_TYPE_QUESTION": {
+      "message": "5440055726839070415"
+   },
+   "MEDIA_ROUTER_MIRRORING_QUALITY_SUBHEADING": {
+      "message": "8330636888136075045"
+   },
+   "MEDIA_ROUTER_NETWORK_DIFFERENT_WIFI": {
+      "message": "7824803162979416790"
+   },
+   "MEDIA_ROUTER_NETWORK_QUESTION": {
+      "message": "1213957982723875920"
+   },
+   "MEDIA_ROUTER_NETWORK_SAME_WIFI": {
+      "message": "5385436389563925676"
+   },
+   "MEDIA_ROUTER_NETWORK_WIRED_PC": {
+      "message": "845494741086179740"
+   },
+   "MEDIA_ROUTER_NO": {
+      "message": "3542042671420335679"
+   },
+   "MEDIA_ROUTER_PRIVACY_DATA_USAGE": {
+      "message": "4097220110929447276"
+   },
+   "MEDIA_ROUTER_SEND_BUTTON": {
+      "message": "9059560719840598868"
+   },
+   "MEDIA_ROUTER_SEND_LOGS": {
+      "message": "715869212995214079"
+   },
+   "MEDIA_ROUTER_SETUP_VISIBILITY_QUESTION": {
+      "message": "3370655049908001660"
+   },
+   "MEDIA_ROUTER_SOFTWARE_QUESTION": {
+      "message": "9120942669794506861"
+   },
+   "MEDIA_ROUTER_UNKNOWN": {
+      "message": "6997602168024654529"
+   },
+   "MEDIA_ROUTER_VIDEO_QUALITY": {
+      "message": "8530815930928232626"
+   },
+   "MEDIA_ROUTER_VIDEO_SMOOTHNESS": {
+      "message": "1428448869078126731"
+   },
+   "MEDIA_ROUTER_YES": {
+      "message": "2807800733729323332"
+   },
+   "MSG_FAILED_TO_CAST": {
+      "message": "4528089202128275824"
+   },
+   "MSG_KNOCK_DENIED": {
+      "message": "4246483347873264186"
+   },
+   "MSG_KNOCK_TIMEOUT": {
+      "message": "5991427458288444010"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_MR_CONNECT_FAILED": {
+      "message": "1522140683318860351"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "5699813974548050528"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_GOOD": {
+      "message": "8515148417333877999"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_PERFECT": {
+      "message": "1636686747687494376"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_POOR": {
+      "message": "843316808366399491"
+   },
+   "MSG_MR_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "4592127349908255218"
+   },
+   "MSG_MR_FEEDBACK_DISCARD_CONFIRM
