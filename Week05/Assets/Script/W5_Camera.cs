@@ -19,6 +19,7 @@ public class W5_Camera : MonoBehaviour
 
     private Vector3 currentEular;
 
+    private Vector2 inputAxis;
 
     void Start()
     {
@@ -32,6 +33,11 @@ public class W5_Camera : MonoBehaviour
         axis1.transform.rotation = target.transform.rotation;
     }
 
+    public void SetInputAxis(Vector2 axis)
+    {
+        inputAxis = axis;
+    }
+
     void LateUpdate()
     {
         target.transform.eulerAngles = new Vector3(0,axis1.transform.eulerAngles.y,0);
@@ -39,8 +45,14 @@ public class W5_Camera : MonoBehaviour
         axis1.transform.position = target.transform.position + offset;
         axis2.transform.localPosition = -Vector3.forward * distance;
 
-        currentEular += Vector3.right * (sensitivity * Input.GetAxis("Mouse Y")) * Time.deltaTime;
-        currentEular += Vector3.up * (sensitivity * Input.GetAxis("Mouse X")) * Time.deltaTime;
+        currentEular += Vector3.right * 
+                        (sensitivity * inputAxis.y) * 
+                        Time.deltaTime;
+
+        currentEular += Vector3.up * 
+                        (sensitivity * inputAxis.x) * 
+                        Time.deltaTime;
+
         currentEular.x = Mathf.Clamp(currentEular.x, -limitangleMin, limitangleMax);
 
         axis1.transform.localRotation = Quaternion.Euler(currentEular);
