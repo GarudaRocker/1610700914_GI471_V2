@@ -6,14 +6,11 @@ using UnityEngine.UI;
 public class CoinManager : MonoBehaviour
 {
     public Text textCoin;
-    public Button addCoinButton;
 
     private ShopManager shopManager;
 
     public void Start()
     {
-        addCoinButton = GetComponent<Button>();
-
         shopManager = FindObjectOfType<ShopManager>();
     }
 
