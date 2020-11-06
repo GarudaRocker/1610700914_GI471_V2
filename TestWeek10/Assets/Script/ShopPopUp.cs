@@ -7,10 +7,9 @@ public class ShopPopUp : MonoBehaviour
 {
     public enum PopUpState
     {
+        Idle,
         Cancel,
-        NotEnoughCoin,
-        OutOfStock,
-        FinishBuy,
+        PopUp,
     }
 
     public Text textPopUp;
@@ -26,8 +25,8 @@ public class ShopPopUp : MonoBehaviour
 
     private void Start()
     {
-        shopPopUp.gameObject.SetActive(false);
-        cancelButton.gameObject.SetActive(false);
+        //textPopUp.text = "!!! Welcome to Shop !!!";
+        ChangeState(PopUpState.PopUp);
 
         shopManager = FindObjectOfType<ShopManager>();
     }
@@ -35,58 +34,159 @@ public class ShopPopUp : MonoBehaviour
     private void Update()
     {
         UpdateShopState();
+        UpdateTextPopUp();
     }
 
     private void UpdateShopState()
     {
         switch (popUpState)
         {
+            case PopUpState.Idle:
+                {
+                    break;
+                }
             case PopUpState.Cancel:
                 {
+                    UpdateCancel();
                     break;
                 }
-            case PopUpState.NotEnoughCoin:
+            case PopUpState.PopUp:
                 {
-                    UpdateNotEnoughCoin();
-                    break;
-                }
-            case PopUpState.OutOfStock:
-                {
-                    UpdateNotOutOfStock();
-                    break;
-                }
-            case PopUpState.FinishBuy:
-                {
-                    UpdateFinishBuy();
+                    UpdateTextPopUp();
                     break;
                 }
         }
     }
 
-    private void UpdateNotEnoughCoin()
+    private void UpdateTextPopUp()
     {
+
+
         if (shopManager.coin < shopManager.applePrice)
         {
-            textPopUp.text = "You Have Not Enough Coin !!!";
-            ChangeState(PopUpState.NotEnoughCoin);
+            NotEnoughCoin();
+            
         }
-               
-    }
 
-    private void UpdateNotOutOfStock()
-    {
-        if (shopManager.appleAmount <= 0)
+        else if (shopManager.appleAmount == 0)
         {
-            textPopUp.text = "Item Is Out of Stock !!!";
-            ChangeState(PopUpState.OutOfStock);
+            OutOfStock();
+            
         }
+
+        else if (shopManager.coin >= shopManager.applePrice)
+        {
+            FinishBuy();
+            
+        }
+
+
+        ChangeState(PopUpState.Idle);
+
+
+
+
+
+
+
+
+        //UpdateNotEnoughCoin();
+        //UpdateOutOfStock();
+        //UpdateFinishBuy();
+        UpdateCancel();
+
+        // ยังแก้ไม่ได้
     }
 
-    private void UpdateFinishBuy()
+    private void UpdateCancel()
     {
-            textPopUp.text = "Buying Successful";
-            ChangeState(PopUpState.FinishBuy);        
+        ChangeState(PopUpState.Idle);
     }
+
+    private void UpdatePopUp()
+    {
+        ChangeState(PopUpState.PopUp);
+    }
+
+
+    //private void UpdateNotEnoughCoin()
+    //{
+    //    if (shopManager.coin < shopManager.applePrice)
+    //    {
+    //        NotEnoughCoin();
+    //        ChangeState(PopUpState.Idle);
+    //    }      
+    //}
+
+    //private void UpdateOutOfStock()
+    //{
+    //    if (shopManager.appleAmount == 0)
+    //    {
+    //        OutOfStock();
+    //        ChangeState(PopUpState.Idle);
+    //    }
+    //}
+
+    //private void UpdateFinishBuy()
+    //{
+    //    if (shopManager.coin >= shopManager.applePrice)
+    //    {
+    //        FinishBuy();
+    //        ChangeState(PopUpState.Idle);
+    //    }        
+    //}
+
+
+///
+/// ////////////////////////////////////////////////////////////////////////////
+///
+
+
+
+
+    public void Cancel()
+    {
+        ChangeState(PopUpState.Cancel);
+    }
+
+    public void PopUp()
+    {
+        ChangeState(PopUpState.PopUp);
+    }
+
+    public void NotEnoughCoin()
+    {
+        textPopUp.text = "You Have Not Enough Coin !!!";
+        UpdateCancel();
+    }
+
+    public void OutOfStock()
+    {
+        textPopUp.text = "Item Is Out of Stock !!!";
+        UpdateCancel();
+    }
+
+    public void FinishBuy()
+    {
+        textPopUp.text = "Buying Successfully";
+        UpdateCancel();
+    }
+
+
+
+
+
+
+
+
+
+    ///
+    /// /////////////////////////////////////////////////////////////////////
+    ///
+
+
+
+
 
 
 
@@ -102,30 +202,23 @@ public class ShopPopUp : MonoBehaviour
 
             switch (popUpState)
             {
+                case PopUpState.Idle:
+                    {
+                        break;
+                    }
                 case PopUpState.Cancel:
                     {
                         shopPopUp.gameObject.SetActive(false);
                         cancelButton.gameObject.SetActive(false);
                         break;
                     }
-                case PopUpState.NotEnoughCoin:
+                case PopUpState.PopUp:
                     {
                         shopPopUp.gameObject.SetActive(true);
                         cancelButton.gameObject.SetActive(true);
                         break;
                     }
-                case PopUpState.OutOfStock:
-                    {
-                        shopPopUp.gameObject.SetActive(true);
-                        cancelButton.gameObject.SetActive(true);
-                        break;
-                    }
-                case PopUpState.FinishBuy:
-                    {
-                        shopPopUp.gameObject.SetActive(true);
-                        cancelButton.gameObject.SetActive(true);
-                        break;
-                    }
+
             }
         }
 
