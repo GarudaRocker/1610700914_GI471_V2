@@ -54,6 +54,10 @@ public class ShopManager : MonoBehaviour
 
     private ItemID itemId;
 
+    //public List<string> itemNameList = new List<string>();
+    //public List<string> itemPriceList = new List<string>();
+    //public List<int> itemAmountList = new List<int>();
+
     public delegate void DelegateHandleItemID(ItemID itemId);
     public event DelegateHandleItemID OnItemIDBuy;
 
@@ -69,7 +73,7 @@ public class ShopManager : MonoBehaviour
         {
             ChangeItemID(ItemID.Idle);
         }
-       
+
     }
 
     private void UpdateItemID()
@@ -133,6 +137,8 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+
+
     private void UpdateApple()
     {
         if (appleAmount > 0)
@@ -140,7 +146,7 @@ public class ShopManager : MonoBehaviour
             appleAmount--;
             coin -= applePrice;
             UpdateCoin();
-        }        
+        }
     }
 
     private void UpdateSword()
@@ -250,7 +256,7 @@ public class ShopManager : MonoBehaviour
     {
         if (coin >= applePrice)
         {
-            ChangeItemID(ItemID.Apple);          
+            ChangeItemID(ItemID.Apple);
         }
     }
 
@@ -326,8 +332,6 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-
-
     ///
     /// //////////////////////////////////////////////////////////////////////////////
     ///
@@ -351,15 +355,15 @@ public class ShopManager : MonoBehaviour
                         break;
                     }
                 case ItemID.Apple:
-                    {                       
+                    {
                         break;
                     }
                 case ItemID.Sword:
-                    {                       
+                    {
                         break;
                     }
                 case ItemID.Axe:
-                    {                        
+                    {
                         break;
                     }
                 case ItemID.Bow:
@@ -394,5 +398,4 @@ public class ShopManager : MonoBehaviour
         }
 
     }
-
 }

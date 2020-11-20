@@ -16,6 +16,8 @@ public class ShopPopUp : MonoBehaviour
     public Image shopPopUp;
     public Image cancelButton;
 
+    private bool coinZero = false;
+    private bool itemZero = false;
     private PopUpState popUpState;
 
     private ShopManager shopManager;
@@ -26,18 +28,24 @@ public class ShopPopUp : MonoBehaviour
     private void Start()
     {
         //textPopUp.text = "!!! Welcome to Shop !!!";
-        ChangeState(PopUpState.PopUp);
+        ChangeState(PopUpState.Cancel);
 
         shopManager = FindObjectOfType<ShopManager>();
     }
 
     private void Update()
     {
-        UpdateShopState();
-        UpdateTextPopUp();
+        UpdateShopPopUp();
+        UpdateTextPopUp();       
     }
 
-    private void UpdateShopState()
+    private void UpdateTextPopUp()
+    {
+        
+        UpdatePopUp();
+    }
+
+    private void UpdateShopPopUp()
     {
         switch (popUpState)
         {
@@ -52,51 +60,14 @@ public class ShopPopUp : MonoBehaviour
                 }
             case PopUpState.PopUp:
                 {
-                    UpdateTextPopUp();
+                    UpdatePopUp();
+                    UpdateAmountCheck();                   
                     break;
                 }
         }
     }
 
-    private void UpdateTextPopUp()
-    {
 
-
-        if (shopManager.coin < shopManager.applePrice)
-        {
-            NotEnoughCoin();
-            
-        }
-
-        else if (shopManager.appleAmount == 0)
-        {
-            OutOfStock();
-            
-        }
-
-        else if (shopManager.coin >= shopManager.applePrice)
-        {
-            FinishBuy();
-            
-        }
-
-
-        ChangeState(PopUpState.Idle);
-
-
-
-
-
-
-
-
-        //UpdateNotEnoughCoin();
-        //UpdateOutOfStock();
-        //UpdateFinishBuy();
-        UpdateCancel();
-
-        // ยังแก้ไม่ได้
-    }
 
     private void UpdateCancel()
     {
@@ -105,43 +76,93 @@ public class ShopPopUp : MonoBehaviour
 
     private void UpdatePopUp()
     {
-        ChangeState(PopUpState.PopUp);
+        ChangeState(PopUpState.Idle);
+    }
+
+    private void UpdateCoinCheck()
+    {
+
+
+        if (shopManager.coin < shopManager.applePrice)
+        {           
+            NotEnoughCoin();
+        }
+        else
+        {           
+            BuyingSuccessfully();
+        }
+    }
+
+    
+
+    private void UpdateAmountCheck()
+    {
+        if(itemZero == true)
+        {
+            ItemIsOut();
+        }
+
+        else
+        {
+            
+            UpdateCoinCheck();
+            AmountZeroCheck();
+        }
+    }
+
+/// <summary>
+/// ////////////////////////////////////////////////////////////////
+/// </summary>
+
+
+    private void BuyingSuccessfully()
+    {
+        textPopUp.text = "Buying Successfully";
+        Debug.Log("Buying Successfully");
+    }
+
+    private void NotEnoughCoin()
+    {
+        textPopUp.text = "You Have Not Enough Coin !!!";
+        Debug.Log("You Have Not Enough Coin");
+    }
+
+    private void ItemIsOut()
+    {
+        textPopUp.text = "Item Is Out of Stock !!!";
+        Debug.Log("Item Is Out of Stock !!!");
+    }
+
+    private void AmountZeroCheck()
+    {
+        if (shopManager.appleAmount == 0)
+        {
+            itemZero = true;
+        }
+        else
+        {
+            itemZero = false;
+        }
+    }
+
+    private void CoinZeroCheck()
+    {
+        if (shopManager.coin == 0)
+        {
+            coinZero = true;
+            Debug.Log("coin is 0");
+        }
+        else
+        {
+            coinZero = false;
+            Debug.Log("coin is not 0");
+        }
     }
 
 
-    //private void UpdateNotEnoughCoin()
-    //{
-    //    if (shopManager.coin < shopManager.applePrice)
-    //    {
-    //        NotEnoughCoin();
-    //        ChangeState(PopUpState.Idle);
-    //    }      
-    //}
-
-    //private void UpdateOutOfStock()
-    //{
-    //    if (shopManager.appleAmount == 0)
-    //    {
-    //        OutOfStock();
-    //        ChangeState(PopUpState.Idle);
-    //    }
-    //}
-
-    //private void UpdateFinishBuy()
-    //{
-    //    if (shopManager.coin >= shopManager.applePrice)
-    //    {
-    //        FinishBuy();
-    //        ChangeState(PopUpState.Idle);
-    //    }        
-    //}
-
-
-///
-/// ////////////////////////////////////////////////////////////////////////////
-///
-
-
+    /// <summary>
+    /// /////////////////////////////////////////////////////////////////
+    /// </summary>
 
 
     public void Cancel()
@@ -154,42 +175,10 @@ public class ShopPopUp : MonoBehaviour
         ChangeState(PopUpState.PopUp);
     }
 
-    public void NotEnoughCoin()
-    {
-        textPopUp.text = "You Have Not Enough Coin !!!";
-        UpdateCancel();
-    }
 
-    public void OutOfStock()
-    {
-        textPopUp.text = "Item Is Out of Stock !!!";
-        UpdateCancel();
-    }
-
-    public void FinishBuy()
-    {
-        textPopUp.text = "Buying Successfully";
-        UpdateCancel();
-    }
-
-
-
-
-
-
-
-
-
-    ///
-    /// /////////////////////////////////////////////////////////////////////
-    ///
-
-
-
-
-
-
-
+    /// <summary>
+    /// ////////////////////////////////////////////////////////
+    /// </summary>
 
     private void ChangeState(PopUpState toChange)
     {
@@ -207,13 +196,13 @@ public class ShopPopUp : MonoBehaviour
                         break;
                     }
                 case PopUpState.Cancel:
-                    {
+                    {                        
                         shopPopUp.gameObject.SetActive(false);
                         cancelButton.gameObject.SetActive(false);
                         break;
                     }
                 case PopUpState.PopUp:
-                    {
+                    {                       
                         shopPopUp.gameObject.SetActive(true);
                         cancelButton.gameObject.SetActive(true);
                         break;
@@ -221,13 +210,5 @@ public class ShopPopUp : MonoBehaviour
 
             }
         }
-
     }
-
-
-
-
-
-
-
-    }
+}
